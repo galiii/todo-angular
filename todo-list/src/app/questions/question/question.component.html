@@ -1,0 +1,21 @@
+<div *ngIf="question">
+  <div class="question-item">
+    <div class="question-title">
+      {{ question.title }}
+    </div>
+
+    <div class="answers">
+      <ul>
+        <li *ngFor="let answerItem of question.answers">
+          <input type="checkbox" class="answer-checkbox" />
+          <span>{{ answerItem.text }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="group-btns">
+      <button class="btn" type="submit" (click)="goToPrevQuestion()">PREV</button>
+      <button class="btn" (click)="goToNextQuestion()">NEXT</button>
+    </div>
+  </div>
+</div>

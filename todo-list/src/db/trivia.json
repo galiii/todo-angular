@@ -1,0 +1,228 @@
+{
+    "title": "Which dog are you?",
+    "imgLink": "../../img/dog-sitter.jpg",
+    "questions": [
+        {
+            "title": "What food do you like?",
+            "answers": [
+                {
+                    "text": "Pizza",
+                    "points": 2
+                },
+                {
+                    "text": "Tofu",
+                    "points": 3
+                },
+                {
+                    "text": "Nothing",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "Where are a dog's sweat glands located?",
+            "answers": [
+                {
+                    "text": "tail",
+                    "points": 2
+                },
+                {
+                    "text": "Tofu",
+                    "points": 3
+                },
+                {
+                    "text": "Nothing",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "What is your favorite music?",
+            "answers": [
+                {
+                    "text": "Blues",
+                    "points": 3
+                },
+                {
+                    "text": "rock",
+                    "points": 2
+                },
+                {
+                    "text": "Pop",
+                    "points": 1
+                },
+                {
+                    "text": "None",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "What’s your favorite weather?",
+            "answers": [
+                {
+                    "text": "summer",
+                    "points": 3
+                },
+                {
+                    "text": "Spring",
+                    "points": 2
+                },
+                {
+                    "text": "Fall",
+                    "points": 1
+                },
+                {
+                    "text": "winter",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "What’s your favorite beer?",
+            "answers": [
+                {
+                    "text": "Carlsberg",
+                    "points": 3
+                },
+                {
+                    "text": "Maccabi",
+                    "points": 2
+                },
+                {
+                    "text": "Corona",
+                    "points": 1
+                },
+                {
+                    "text": "I don't drink",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "What’s your favorite flower?",
+            "answers": [
+                {
+                    "text": "Rose",
+                    "points": 3
+                },
+                {
+                    "text": "Anemone",
+                    "points": 2
+                },
+                {
+                    "text": "Lily",
+                    "points": 1
+                },
+                {
+                    "text": "None",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "What’s your favorite color?",
+            "answers": [
+                {
+                    "text": "Red",
+                    "points": 1
+                },
+                {
+                    "text": "Green",
+                    "points": 2
+                },
+                {
+                    "text": "Blue",
+                    "points": 3
+                },
+                {
+                    "text": "None",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "What gives your life meaning?",
+            "answers": [
+                {
+                    "text": "Family",
+                    "points": 3
+                },
+                {
+                    "text": "Religion",
+                    "points": 2
+                },
+                {
+                    "text": "Hobbies",
+                    "points": 1
+                },
+                {
+                    "text": "Nothing",
+                    "points": 0
+                }
+            ]
+        },
+        {
+            "title": "What city would you most like to live in?",
+            "answers": [
+                {
+                    "text": "Tel-Aviv",
+                    "points": 3
+                },
+                {
+                    "text": "Ramat-Gan",
+                    "points": 2
+                },
+                {
+                    "text": "Bnei Brak",
+                    "points": 0
+                },
+                {
+                    "text": "Nothing",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "How often do you play sports?",
+            "answers": [
+                {
+                    "text": "All the time",
+                    "points": 3
+                },
+                {
+                    "text": "Often",
+                    "points": 2
+                },
+                {
+                    "text": "Rarely",
+                    "points": 1
+                },
+                {
+                    "text": "Never",
+                    "points": 0
+                }
+            ]
+        }
+    ],
+    "result": [
+        {
+            "min": 0,
+            "max": 10,
+            "text": "chiwawa",
+            "imgUrl": "http.."
+        },
+        {
+            "min": 11,
+            "max": 20,
+            "text": "dog",
+            "imgUrl": "htttp"
+        },
+        {
+            "min": 21,
+            "max": 30,
+            "text": "dog",
+            "imgUrl": "htttp"
+        }
+    ]
+}
