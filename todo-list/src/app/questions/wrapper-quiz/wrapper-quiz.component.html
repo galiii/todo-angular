@@ -1,9 +1,11 @@
 <div class="">
   <ul>
     <li *ngFor="let question of questions">
-      <a [routerLink]="['/question', question?.id]">
+      <!--a [routerLink]="['/question', question?.id]">
         <span class="todo-item">Question {{ question?.id }}</span>
-      </a>
+      </a-->
+      <app-question [question]="question"></app-question>
     </li>
   </ul>
+  <button id="submit">Submit Quiz</button>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { QuestionItem, OptionItem } from '../../interfaces/question-item';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'; //for tokens
 import { QuestionsService } from 'src/app/services/questions/questions.service';
@@ -13,6 +13,11 @@ import { of } from 'rxjs';
 })
 export class QuestionComponent implements OnInit {
   @Input() question: QuestionItem;
+  @Input() value: string;
+  @Output() valueChosen: EventEmitter<any> = new EventEmitter();
+
+  currentIndex: number;
+
   // question$: Observable<QuestionItem>;
 
   constructor(private route: ActivatedRoute, private service: QuestionsService) {}
@@ -28,18 +33,36 @@ export class QuestionComponent implements OnInit {
       switchMap((params: ParamMap) =>
         this.service.getQuestion(params.get('id')))
     );*/
-    let id = this.route.snapshot.paramMap.get('id');
+    //let id = this.route.snapshot.paramMap.get('id');
+    //console.log(id);
+    //this.question = this.service.getQuestion(id);
+    console.log(this.question);
+  }
 
-    this.question = this.service.getQuestion(id);
+  /*
+I have 10 questions with the id 1 to 10
+So if i'm in id 1 i don't want to go goToPrevQuestion() 
+and i dont want to see the button -> PREV.
+if i'm in id 10 i don't want to go goToNextQuestion() 
+and i dont want to see the button -> NEXT.
+*/
+
+  isCorrectIndex(btnType) {
+    console.log(`we in buttom number ${btnType}   and the id is ${this.question.id}`);
+
+    return this.question.id - 1 > 0 && this.question.id <= 3 ? { btn: true } : { 'btn-hide': true };
   }
 
   goToPrevQuestion(): void {
-    // get question number
+    this.currentIndex = this.question.id; // get question number
+    console.log(`Click event in prev ${this.question.id}`);
     // prev question = current - 1 (if it's valid)
     // change route
   }
 
   goToNextQuestion(): void {
     //quiz wrapper
+    this.currentIndex = this.question.id; // get question number
+    console.log(`Click event in next ${this.question.id}`);
   }
 }

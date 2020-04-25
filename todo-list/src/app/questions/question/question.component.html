@@ -7,15 +7,26 @@
     <div class="answers">
       <ul>
         <li *ngFor="let answerItem of question.answers">
-          <input type="checkbox" class="answer-checkbox" />
+          <input type="radio" class="answer-checkbox" />
           <span>{{ answerItem.text }}</span>
         </li>
       </ul>
     </div>
 
     <div class="group-btns">
-      <button class="btn" type="submit" (click)="goToPrevQuestion()">PREV</button>
-      <button class="btn" (click)="goToNextQuestion()">NEXT</button>
+      <button
+        [ngClass]="{ btn: question.id - 1 > 0, 'btn-hide': !(question.id - 1 > 0) }"
+        type="submit"
+        (click)="goToPrevQuestion()"
+      >
+        PREV
+      </button>
+      <button
+        [ngClass]="{ btn: question.id + 1 <= 3, 'btn-hide': !(question.id + 1 <= 3) }"
+        (click)="goToNextQuestion()"
+      >
+        NEXT
+      </button>
     </div>
   </div>
 </div>
