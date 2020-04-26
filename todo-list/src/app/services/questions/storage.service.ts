@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { QuestionItem, OptionItem } from '../../interfaces/question-item';
+import { QuestionItem, OptionItem, UserAnswer } from '../../interfaces/question-item';
+import { tick } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +24,8 @@ export class StorageService {
       { text: 'Anemone', points: 2 },
       { text: 'Lily', points: 1 },
       { text: 'None', points: 0 },
-    ],
-    /*[
+    ] /*,
+    [
       { text: 'Carlsberg', points: 3 },
       { text: 'Maccabi', points: 2 },
       { text: 'Corona', points: 1 },
@@ -64,14 +65,14 @@ export class StorageService {
       { text: 'Often', points: 2 },
       { text: 'Rarely', points: 1 },
       { text: 'Never', points: 0 },
-    ],*/
+    ]*/,
   ];
 
   private questions: QuestionItem[] = [
     { id: 1, title: 'How often do you play sports?', answers: this.optionsList[0] },
     { id: 2, title: 'What’s your favorite color?', answers: this.optionsList[1] },
     { id: 3, title: 'What’s your favorite flower?', answers: this.optionsList[2] },
-    /*,
+    /*
     { id: 4, title: 'What’s your favorite beer?', answers: this.optionsList[3] },
     { id: 5, title: 'What’s your favorite weather?', answers: this.optionsList[4] },
     { id: 6, title: 'What is your favorite music?', answers: this.optionsList[5] },
@@ -81,16 +82,12 @@ export class StorageService {
     { id: 10, title: 'How  sports?', answers: this.optionsList[9] },*/
   ];
 
-  private answers: OptionItem[] = [
-    { text: 'All the time', points: 3 },
-    { text: 'Often', points: 2 },
-    { text: 'Rarely', points: 1 },
-    { text: 'Never', points: 0 },
-  ];
-  private question: QuestionItem = { id: 11, title: 'How often do you play sports?', answers: this.answers };
+  private user: UserAnswer[];
 
   constructor() {
+    console.log('CONSTRUCTOR IN STORAGE');
     this.setData('questionsArray', this.questions);
+    this.setData('userAnswers', this.user); //array for user answers
   }
 
   getData(key: string): any {

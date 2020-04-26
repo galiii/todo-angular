@@ -89,3 +89,8 @@
   cursor: pointer;
   vertical-align: bottom;
 }
+
+
+button[disabled] {
+  background-color: darken($color: #000000, $amount: 0);
+}

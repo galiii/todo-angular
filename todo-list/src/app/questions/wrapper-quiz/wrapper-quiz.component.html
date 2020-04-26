@@ -1,11 +1,13 @@
 <div class="">
-  <ul>
-    <li *ngFor="let question of questions">
-      <!--a [routerLink]="['/question', question?.id]">
+  <!--ul>
+    <li *ngFor="let question of questions"-->
+  <!--a [routerLink]="['/question', question?.id]">
         <span class="todo-item">Question {{ question?.id }}</span>
       </a-->
-      <app-question [question]="question"></app-question>
-    </li>
-  </ul>
+  <app-question [currentIndex]="currentIndex" [question]="question" (valueChogen)="saveUserAnswer($event)"
+    (nextIndex)="getCurrentQuestion($event)">
+  </app-question>
+  <!--/li>
+  </ul-->
   <button id="submit">Submit Quiz</button>
 </div>
