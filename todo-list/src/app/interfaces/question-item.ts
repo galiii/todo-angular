@@ -11,5 +11,5 @@ export interface OptionItem {
 
 export interface UserAnswer {
   questionId: number;
-  optionId: number;
+  optionId?: number;
 }

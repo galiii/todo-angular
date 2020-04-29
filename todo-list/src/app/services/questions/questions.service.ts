@@ -20,14 +20,22 @@ export class QuestionsService {
 
   saveUserAnswer(user: UserAnswer): void {
     let answers = this.getUserAnswers();
+    console.log(`IN SERVER ${answers}`);
     answers.push(user);
     this.storage.setData('userAnswers', answers);
   }
 
-  getQuestion(id: number | string) {
+  getUserAnswer(id: number | string) {
     console.log('the id is', typeof id);
-    const som = this.getQuestionsList();
+    const userAnswerList = this.getUserAnswers();
     id = +id;
-    return som[id];
+    return userAnswerList[id];
+  }
+
+  getQuestion(id: number | string) {
+    //console.log('the id is', typeof id);
+    const questionsList = this.getQuestionsList();
+    id = +id;
+    return questionsList[id];
   }
 }
