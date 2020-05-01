@@ -10,11 +10,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./wrapper-quiz.component.scss'],
 })
 export class WrapperQuizComponent implements OnInit {
-  questions: Observable<QuestionItem[]>;
   @Output() question: QuestionItem;
   currentIndex: number;
   user: UserAnswer[];
-  selectedId: number;
   @Output() submit: EventEmitter<UserAnswer[]> = new EventEmitter(); //submit for result component
   subResult: false;
 
@@ -22,11 +20,11 @@ export class WrapperQuizComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(`this.user = ${this.user}`);
-    this.getCurrentQuestion((this.currentIndex = 0));
+    this.loadQuestion((this.currentIndex = 0));
   }
 
-  getCurrentQuestion(currentIndex: number | 0) {
-    console.log(`getCurrentQuestion(${currentIndex})`);
+  loadQuestion(currentIndex: number | 0) {
+    console.log(`loadQuestion(${currentIndex})`);
     this.question = this.service.getQuestion(currentIndex);
     this.user = this.service.getUserAnswers();
   }
@@ -45,11 +43,6 @@ export class WrapperQuizComponent implements OnInit {
   saveUserAnswer(userAnswer: UserAnswer) {
     this.service.saveUserAnswer(userAnswer); //set
     this.updateUserAnswers();
-  }
-
-  private getAllQuestions() {
-    this.questions = this.service.getQuestionsList();
-    console.log(this.questions);
   }
 
   /* The result affter click button submit*/

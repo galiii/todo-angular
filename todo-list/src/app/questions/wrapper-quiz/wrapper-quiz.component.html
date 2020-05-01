@@ -1,7 +1,7 @@
 <div class="">
 
   <app-question [currentIndex]="currentIndex" [question]="question" (valueChogen)="saveUserAnswer($event)"
-    (nextIndex)="getCurrentQuestion($event)" (prevIndex)="getPrevQuestion($event)">
+    (goToQuestion)="loadQuestion($event)">
   </app-question>
 
   <button id="submit">

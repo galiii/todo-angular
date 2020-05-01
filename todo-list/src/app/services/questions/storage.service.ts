@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { QuestionItem, OptionItem, UserAnswer } from '../../interfaces/question-item';
 import { tick } from '@angular/core/testing';
-
+//import sampleData from '../../../db/trivia.json';
 @Injectable({
   providedIn: 'root',
 })

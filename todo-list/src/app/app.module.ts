@@ -5,17 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 //components
-import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
-import { TodoItemComponent } from './todo-item/todo-item.component';
-import { ListManagerComponent } from './list-manager/list-manager.component';
-
-//for my project
 import { PhotoComponent } from './photo/photo.component';
 import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; //page 404
 
 //services
-import { TodoListService } from './services/todo-list.service';
 import { PhotoService } from './services/photo.service';
 import { QuestionsService } from './services/questions/questions.service';
 
@@ -27,9 +21,6 @@ import { QuestionsModule } from './questions/questions.module';
   declarations: [
     //component
     AppComponent,
-    InputButtonUnitComponent,
-    TodoItemComponent,
-    ListManagerComponent,
     PhotoComponent,
     HomeComponent,
     PageNotFoundComponent,
@@ -41,7 +32,7 @@ import { QuestionsModule } from './questions/questions.module';
     QuestionsModule,
     AppRoutingModule,
   ],
-  providers: [TodoListService, PhotoService, QuestionsService], //servise
+  providers: [PhotoService, QuestionsService], //servise
   bootstrap: [AppComponent],
 })
 export class AppModule {}

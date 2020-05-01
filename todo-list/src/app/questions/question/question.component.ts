@@ -1,10 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { QuestionItem, OptionItem, UserAnswer } from '../../interfaces/question-item';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router'; //for tokens
+import { ActivatedRoute } from '@angular/router'; //for tokens
 import { QuestionsService } from 'src/app/services/questions/questions.service';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators'; //you need it later to process the Observable route parameters.
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-question',
@@ -15,27 +12,18 @@ export class QuestionComponent implements OnInit {
   @Input() question: QuestionItem; //
   @Input() currentIndex: number; //the id of the current question we in
   @Output() valueChosen: EventEmitter<UserAnswer> = new EventEmitter();
-  @Output() nextIndex: EventEmitter<number> = new EventEmitter(); //the next index to warrper quiz
+  @Output() goToQuestion: EventEmitter<number> = new EventEmitter(); //the next index to warrper quiz
 
-  @Output() prevIndex: EventEmitter<number> = new EventEmitter();
   nextFlag = false;
   prevFlag = false;
 
-  // question$: Observable<QuestionItem>;
-
   constructor(private route: ActivatedRoute, private service: QuestionsService) {}
 
-  ngOnInit(): void {
-    //this.getQuestion();
-  }
-
-  /*GET ONLY 1 Question with the current index*/
-  private getQuestion() {
-    const id = this.question;
-  }
+  ngOnInit(): void {}
 
   saveUserAnswer(answer) {
-    this.nextFlag = !this.nextFlag;
+    this.nextFlag = !this.nextFlag; //the next button act like "submit" button
+    this.prevFlag = true; //
     let itemAdded: UserAnswer = { questionId: this.question.id, optionId: answer.points };
     this.service.saveUserAnswer(itemAdded);
     let usr = this.service.getUserAnswers();
@@ -52,18 +40,15 @@ and i dont want to see the button -> NEXT.
 */
 
   goToPrevQuestion(i: number): void {
-    console.log('this i === ', i);
-    this.prevFlag = true;
-    this.currentIndex = this.currentIndex--;
-    console.log('this qaaaa', this.question);
-    this.prevFlag = false;
+    // this.prevFlag = true;
+    this.goToQuestion.emit(--this.currentIndex);
   }
 
   goToNextQuestion(i: number): void {
-    //quiz wrapper
-    this.currentIndex = this.question.id; // get question number
-    this.currentIndex = +this.currentIndex++;
-    this.nextIndex.emit(this.currentIndex);
-    this.nextFlag = false;
+    this.nextFlag = false; //reset for the next qustion
+    //you can't put this.currentIndex + 1
+    //Because .emit will be excute with  this.currentIndex  and not + 1
+    //++ - before the parameter before emit  increace ++this.currentIndex
+    this.goToQuestion.emit(++this.currentIndex);
   }
 }
