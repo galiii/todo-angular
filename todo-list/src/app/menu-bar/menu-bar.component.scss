@@ -1,0 +1,51 @@
+:root {
+  --lightblue: #12d6e4;
+  --hover: #1269bb;
+  --color: rgb(1, 224, 12);
+}
+
+.warrper-menu {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f93d66, #6d47d9);
+  position: -webkit-sticky;
+  /* Safari */
+  position: fixed;
+  top: 0;
+  font-weight: 500;
+  color: var(--color);
+  font-size: 22px;
+}
+
+.container-menu {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 20px;
+  grid-gap: 20px;
+
+}
+
+.item-menu {
+
+  background-color: #12d6e4;
+  text-align: center;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.item-menu a {
+  text-decoration: none;
+}
+
+.item-menu:hover {
+  background-color: var(--hover);
+  cursor: pointer;
+  transform: translateY(5px);
+}
+
+@media (max-width: 700px) {
+  .container-menu {
+    grid-template-columns: 1fr;
+    padding: 0 40px;
+  }
+}

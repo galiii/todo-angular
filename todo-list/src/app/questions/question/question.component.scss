@@ -1,17 +1,40 @@
+/* Color Theme Swatches in Hex */
+$My-Color-Theme-1-hex: #28B7AC;
+$My-Color-Theme-2-hex: #7286E8;
+$My-Color-Theme-3-hex: #E48AFF;
+$My-Color-Theme-4-hex: #E87C72;
+$My-Color-Theme-5-hex: #FFC97D;
+
+/* Color Theme Swatches in RGBA */
+$My-Color-Theme-1-rgba: rgba(40, 183, 172, 1);
+$My-Color-Theme-2-rgba: rgba(114, 134, 232, 1);
+$My-Color-Theme-3-rgba: rgba(228, 138, 255, 1);
+$My-Color-Theme-4-rgba: rgba(232, 124, 114, 1);
+$My-Color-Theme-5-rgba: rgba(255, 201, 125, 1);
+
+/* Color Theme Swatches in HSLA */
+$My-Color-Theme-1-hsla: hsla(175, 64, 43, 1);
+$My-Color-Theme-2-hsla: hsla(229, 71, 67, 1);
+$My-Color-Theme-3-hsla: hsla(286, 100, 77, 1);
+$My-Color-Theme-4-hsla: hsla(5, 71, 67, 1);
+$My-Color-Theme-5-hsla: hsla(35, 100, 74, 1);
+
+
 .question-item {
-  background-color: blue;
+  background: $My-Color-Theme-2-hex;
   /* position: relative;*/
+  display: grid;
+  grid-gap: 30px;
   width: 350px;
   padding: 30px 30px 15px;
-  background: grayscale($color: #b3cfc8);
+
   border: 1px solid;
   border-color: #dfdcdc #d9d6d6 #ccc;
   border-radius: 2px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  display: grid;
-  grid-gap: 30px;
+
 }
 
 .question-item::before,
@@ -40,6 +63,13 @@
   border-color: #c4c4c4;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+
+
+}
+
+.question-item div {
+  background-color: $My-Color-Theme-1-hex;
 }
 
 
@@ -50,17 +80,31 @@
   justify-content: space-around;
   text-align: center;
   padding: 25px;
+  font-weight: 700;
   /*background-color: crimson;*/
 }
 
-.form-container {
-  display: grid;
-  grid-gap: 30px;
+.question-text {
+
+  text-align: center;
 }
 
 .answers {
   border: 1px solid black;
   padding: 15px;
+
+  ul {
+    /*.answers ul*/
+    display: grid;
+    height: 190px;
+    align-content: space-between;
+
+    li {
+      /*.answers ul li*/
+      padding: 10px;
+      background-color: rgba(22, 2, 2, 0.55);
+    }
+  }
 }
 
 .answer-checkbox {
@@ -81,7 +125,7 @@
 }
 
 .btn {
-  background: lightseagreen;
+  background: $My-Color-Theme-2-hex;
   color: #fff;
   padding: 3px 10px;
   margin: 0 0 0 3px;
@@ -95,5 +139,5 @@
 
 
 button[disabled] {
-  background-color: darken($color: #000000, $amount: 0);
+  background-color: $My-Color-Theme-4-hex;
 }

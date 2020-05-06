@@ -16,6 +16,10 @@ import { QuestionsService } from './services/questions/questions.service';
 //router
 import { AppRoutingModule } from './app-routing.module';
 import { QuestionsModule } from './questions/questions.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+
+//
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ import { QuestionsModule } from './questions/questions.module';
     PhotoComponent,
     HomeComponent,
     PageNotFoundComponent,
+    MenuBarComponent,
   ],
   imports: [
     //modules
@@ -31,6 +36,7 @@ import { QuestionsModule } from './questions/questions.module';
     FormsModule,
     QuestionsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [PhotoService, QuestionsService], //servise
   bootstrap: [AppComponent],

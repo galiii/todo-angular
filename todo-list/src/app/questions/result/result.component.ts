@@ -10,6 +10,7 @@ import { QuestionsService } from 'src/app/services/questions/questions.service';
 })
 export class ResultComponent implements OnInit {
   @Input() userAnswers: UserAnswer[]; //the input come from quiz-warrper
+  finalPoint: number; //we will have the final point
 
   constructor(private route: ActivatedRoute, private service: QuestionsService) {}
 
@@ -28,5 +29,6 @@ export class ResultComponent implements OnInit {
     }
     console.log(result);
     console.log('EVENT BUTTON ADD RESULT');
+    this.finalPoint = pointResult;
   }
 }
