@@ -1,13 +1,13 @@
-<div *ngIf="question">
+<div *ngIf="question" class="container-question">
   <div class="question-item">
     <div class="question-title ">
-      <div>{{ question.id }}</div>
+      <div class="question-number">{{ question.id }}</div>
       <div class="question-text">{{ question.title }}</div>
     </div>
 
     <div class="answers">
-      <ul>
-        <li *ngFor="let answerItem of question.answers">
+      <ul class="answers-list">
+        <li *ngFor="let answerItem of question.answers" class="answer-item">
           <label>
             <input type="radio" value="answerItem.points" name="radiogroup" (click)="saveUserAnswer(answerItem)"
               class="answer-checkbox" />

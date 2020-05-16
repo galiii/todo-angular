@@ -2,142 +2,135 @@
 $My-Color-Theme-1-hex: #28B7AC;
 $My-Color-Theme-2-hex: #7286E8;
 $My-Color-Theme-3-hex: #E48AFF;
-$My-Color-Theme-4-hex: #E87C72;
+$My-Color-Theme-4-hex: #FE763F;
 $My-Color-Theme-5-hex: #FFC97D;
+$Twitter-Color: #1DA1F2;
+$Twitter-Color-Light-Grey: #CCD6DD
+/*#F5F8FA*/
+;
 
-/* Color Theme Swatches in RGBA */
-$My-Color-Theme-1-rgba: rgba(40, 183, 172, 1);
-$My-Color-Theme-2-rgba: rgba(114, 134, 232, 1);
-$My-Color-Theme-3-rgba: rgba(228, 138, 255, 1);
-$My-Color-Theme-4-rgba: rgba(232, 124, 114, 1);
-$My-Color-Theme-5-rgba: rgba(255, 201, 125, 1);
-
-/* Color Theme Swatches in HSLA */
-$My-Color-Theme-1-hsla: hsla(175, 64, 43, 1);
-$My-Color-Theme-2-hsla: hsla(229, 71, 67, 1);
-$My-Color-Theme-3-hsla: hsla(286, 100, 77, 1);
-$My-Color-Theme-4-hsla: hsla(5, 71, 67, 1);
-$My-Color-Theme-5-hsla: hsla(35, 100, 74, 1);
-
-
-.question-item {
-  background: $My-Color-Theme-2-hex;
-  /* position: relative;*/
-  display: grid;
-  grid-gap: 30px;
-  width: 350px;
-  padding: 30px 30px 15px;
-
-  border: 1px solid;
-  border-color: #dfdcdc #d9d6d6 #ccc;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-
-}
-
-.question-item::before,
-.question-item::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  height: 4px;
-  background: white;
-  border: 1px solid black;
-  border-radius: 2px;
-}
-
-.question-item::after {
-  bottom: -3px;
-  left: 0;
-  right: 0;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.question-item::before {
-  bottom: -5px;
-  left: 2px;
-  right: 2px;
-  border-color: #c4c4c4;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-
-
-
-}
-
-.question-item div {
-  background-color: $My-Color-Theme-1-hex;
-}
-
-
-.question-title {
-  border: 1px solid black;
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-around;
-  text-align: center;
-  padding: 25px;
-  font-weight: 700;
-  /*background-color: crimson;*/
-}
-
-.question-text {
-
-  text-align: center;
-}
-
-.answers {
-  border: 1px solid black;
-  padding: 15px;
-
-  ul {
-    /*.answers ul*/
+.container-question {
+  .question-item {
+    background: #7E83C2;
+    /* position: relative;*/
     display: grid;
-    height: 190px;
-    align-content: space-between;
+    grid-gap: 30px;
+    width: 350px;
+    padding: 30px 30px 15px;
+    border: 1px solid;
+    border-radius: 26px;
+    border-color: #dfdcdc #d9d6d6 #ccc;
+    //border-radius: 2px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
 
-    li {
-      /*.answers ul li*/
-      padding: 10px;
-      background-color: $My-Color-Theme-5-hex;
+    /*
+  .question-item::before,
+  .question-item::after {...}
+  */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      height: 4px;
+      background: rgb(31, 26, 0);
+      border: 5px solid black;
+      border-radius: 2px;
     }
+
+    /* In css .question-item::after  {....} */
+    &::after {
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 2px rgba(109, 163, 109, 0.1);
+    }
+
+    /* In css .question-item::before {....} */
+    &::before {
+      bottom: -5px;
+      left: 2px;
+      right: 2px;
+      border-color: #c4c4c4;
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    /*
+  If it was in css file the code will be looked
+  . question-item div{....}
+  */
+    & div {
+      background-color: $Twitter-Color-Light-Grey;
+      // border: none;
+      border-radius: 20px;
+    }
+
+    /* The first child of .question-item */
+    .question-title {
+      border: 1px solid black;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 25px;
+      font-weight: 700;
+    }
+
+    .answers {
+      border: 1px solid black;
+
+      /*.answers ul*/
+      .answers-list {
+        display: grid;
+        grid-gap: 10px;
+        padding: 15px;
+
+        /*.answers ul li*/
+        .answer-item {
+          border: none;
+          border-radius: 30px;
+          padding: 10px;
+          background-color: #fa4092;
+          color: #F1E2DD;
+          font-weight: 700;
+        }
+      }
+    }
+
+    /* This class holding 2 to 4 classes depend the condition*/
+    .group-btns {
+      padding: 15px;
+      border: rgba($color: #000000, $alpha: 1) solid 1px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .btn {
+        background: $Twitter-Color;
+        color: #fff;
+        padding: 3px 25px;
+        margin: 0 0 0 3px;
+        border: none;
+        border-radius: 40px;
+        font-size: 12px;
+        line-height: 24px;
+        cursor: pointer;
+        vertical-align: bottom;
+      }
+
+      .btn-hide {
+        display: none;
+      }
+
+      button[disabled] {
+        cursor: not-allowed;
+        //background-color: #EE1D52;
+      }
+
+    }
+
   }
-}
-
-.answer-checkbox {
-  flex-shrink: 0;
-  margin: auto 1ex auto 0;
-}
-
-.group-btns {
-  padding: 15px;
-  border: rgba($color: #000000, $alpha: 1) solid 1px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.btn-hide {
-  display: none;
-}
-
-.btn {
-  background: $My-Color-Theme-2-hex;
-  color: #fff;
-  padding: 3px 10px;
-  margin: 0 0 0 3px;
-  border: none;
-  border-radius: 5px;
-  font-size: 12px;
-  line-height: 24px;
-  cursor: pointer;
-  vertical-align: bottom;
-}
-
-
-button[disabled] {
-  background-color: $My-Color-Theme-4-hex;
 }
